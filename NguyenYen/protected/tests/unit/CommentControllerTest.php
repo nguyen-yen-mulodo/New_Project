@@ -16,13 +16,32 @@ class CommentControllerTest extends CDbTestCase{
         'comments' => ':tbl_comment'
     );
     
-    public function testSaveModel() {
-// 		echo '<pre>';
-// 		var_dump(self::$id);
-// 		echo '</pre>';die;
+//    public function testSaveModel() {
+//// 		echo '<pre>';
+//// 		var_dump(self::$id);
+//// 		echo '</pre>';die;
+//        
+//	var_dump($this->comments);
+//    }
+    
+    /**
+     * @test
+     */
+    public function testactionaList(){
         
-	var_dump($this->comments);
-	}
+        $models = Comment::model()->findAll();
+        $this->assertTrue(is_array($models) );
+        $this->assertTrue(is_array($this->comments) );
+        var_dump($models);
+//         var_dump($this->comments);
+//         $flag = $models == $this->comments?true:false;
+//         var_dump($flag);
+       //$com = array_diff($models, $this->comments);
+       
+       // $this->assertTrue($flag);
+        
+        
+    }
     
 }
 
